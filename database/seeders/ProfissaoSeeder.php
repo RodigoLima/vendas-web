@@ -1,0 +1,23 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Database\Seeders\Eloquent;
+
+class ProfissaoSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+        DB::disableQueryLog();
+        DB::unprepared(file_get_contents('database\sqlinsert\profissoesinsert.sql'));
+
+    }
+}
